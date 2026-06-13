@@ -1,140 +1,46 @@
-# CLAUDE.md - AI Assistant Guide
+# CLAUDE.md
 
-This file provides guidance for AI assistants working with the redesigned-garbanzo repository.
+## Repo: redesigned-garbanzo
+Status: New project, structure TBD
 
-## Repository Overview
+## Token & Context Discipline
 
-**Repository:** redesigned-garbanzo
-**Status:** New/Initial Setup
-**Primary Language:** TBD (to be determined as the project develops)
+- Default to concise output. No preamble, no summaries unless asked.
+- Do not read files speculatively. Only read what the current task requires.
+- Do not load entire files when a targeted function, section, or line range is sufficient.
+- Before running broad operations (grep across repo, recursive reads), confirm scope.
+- Prefer targeted bash commands over multi-file reads to answer structural questions.
 
-This repository is in its initial setup phase. This CLAUDE.md file will be updated as the project structure and conventions are established.
+## Session Hygiene
 
-## Project Structure
+- If a task is complete and a new topic starts, recommend `/clear` rather than continuing.
+- Do not carry forward context from prior tasks unless explicitly referenced.
+- Flag when conversation history is likely degrading quality or causing confusion.
 
-```
-redesigned-garbanzo/
-├── CLAUDE.md           # This file - AI assistant guidance
-└── (project files to be added)
-```
+## Output Defaults
 
-*Note: Update this section as the project structure evolves.*
+- Code: no explanatory prose unless asked. Comments in code only where non-obvious.
+- Edits: show diffs or changed blocks only, not full file reprints.
+- Plans: bullet list, not paragraphs. Confirm before executing multi-step sequences.
 
-## Development Workflows
+## Task Execution
 
-### Getting Started
+- Clarify ambiguous scope with one question before starting, not after.
+- For destructive or wide-impact operations, state what you're about to do and wait.
+- Do not retry failed approaches more than twice without flagging and asking for direction.
 
-1. Clone the repository
-2. Install dependencies (once defined)
-3. Follow the development guidelines below
+## This File
 
-### Branch Naming Conventions
+- Keep CLAUDE.md under 150 lines. Trim before adding.
+- No duplicate rules. No aspirational content — only behavioral constraints.
 
-- Feature branches: `feature/<description>`
-- Bug fixes: `fix/<description>`
-- Documentation: `docs/<description>`
-- AI assistant branches: `claude/<description>`
+## Commits
 
-### Commit Message Guidelines
+Use conventional format:
+- `feat:` / `fix:` / `docs:` / `refactor:` / `test:` / `chore:`
 
-Follow conventional commit format:
-- `feat:` - New feature
-- `fix:` - Bug fix
-- `docs:` - Documentation changes
-- `refactor:` - Code refactoring
-- `test:` - Adding or updating tests
-- `chore:` - Maintenance tasks
+## Branches
 
-Example: `feat: add user authentication module`
-
-## Key Conventions
-
-### Code Style
-
-*To be defined as the project develops. Consider:*
-- Linting configuration
-- Formatting rules
-- Naming conventions
-
-### Testing
-
-*To be defined. Include:*
-- Test framework
-- Test file naming conventions
-- Coverage requirements
-
-### Documentation
-
-- Keep README.md up to date
-- Document public APIs
-- Add inline comments for complex logic
-
-## AI Assistant Guidelines
-
-### When Working on This Codebase
-
-1. **Read before editing**: Always read existing code before making modifications
-2. **Maintain consistency**: Follow established patterns in the codebase
-3. **Minimal changes**: Make only the changes necessary to complete the task
-4. **No over-engineering**: Keep solutions simple and focused
-
-### Common Tasks
-
-#### Adding New Features
-1. Understand the existing architecture
-2. Create feature branch
-3. Implement with tests
-4. Update documentation if needed
-
-#### Fixing Bugs
-1. Reproduce the issue
-2. Identify root cause
-3. Implement minimal fix
-4. Add regression test if applicable
-
-#### Code Reviews
-- Check for security vulnerabilities
-- Verify code follows project conventions
-- Ensure tests are included
-
-### Things to Avoid
-
-- Adding unnecessary dependencies
-- Over-abstracting simple code
-- Making changes outside the scope of the task
-- Committing sensitive information (API keys, credentials)
-
-## Build and Run Commands
-
-*To be added as the project develops:*
-
-```bash
-# Install dependencies
-# npm install / pip install -r requirements.txt / etc.
-
-# Run development server
-# npm run dev / python manage.py runserver / etc.
-
-# Run tests
-# npm test / pytest / etc.
-
-# Build for production
-# npm run build / etc.
-```
-
-## Environment Setup
-
-*To be documented:*
-- Required environment variables
-- Configuration files
-- External service dependencies
-
-## Additional Resources
-
-- [Project Documentation](./docs/) *(to be added)*
-- [Contributing Guidelines](./CONTRIBUTING.md) *(to be added)*
-
----
-
-*Last updated: February 2026*
-*This file should be updated as the project evolves to reflect current structure and conventions.*
+- Features: `feature/<name>`
+- Fixes: `fix/<name>`
+- Claude: `claude/<name>`
