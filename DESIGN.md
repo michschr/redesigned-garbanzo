@@ -71,12 +71,13 @@ only after the basics prove sticky.
 - Write: talk to Claude (mobile/web/desktop) or the Airtable form.
 - No syncing, no local database, no app to build.
 
-## Build plan (when approved)
+## Build plan
 
-1. Create Airtable base with the two tables above + core views
-   (All, By tag, Stale > cadence, Open next steps)
-2. Seed from existing contacts export (needs a CSV or Google Contacts access)
-3. Set up the weekly Gmail/Calendar sweep + digest as a scheduled routine
+1. ✅ Airtable base created (2026-09-21) — see OPERATIONS.md for IDs.
+   Views/form need one-time manual setup (API limitation), steps in OPERATIONS.md
+2. ⏳ Seed from CSV export (Google Contacts or LinkedIn) — pending the file
+3. ✅ Weekly Gmail/Calendar sweep routine created — connector-grant caveat
+   in OPERATIONS.md
 4. Iterate on the schema only after 2–3 weeks of real use
 
 ## Alternative considered
